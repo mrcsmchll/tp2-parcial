@@ -8,7 +8,7 @@ class ControladorNumeros {
 
     obtenerNumeros = async (req,res) => {
         try {
-            let numero = req.body.numero
+            let numero = req.body
             let numeros = await this.apiNumeros.obtenerNumeros(numero)
 
             res.json(numeros)
@@ -20,7 +20,7 @@ class ControladorNumeros {
 
     guardarNumero = async (req,res) => {
         try {
-            let numero = req.param.body
+            let numero = req.body
             console.log(`numero guardado por controlador ${numero}`)
             let numeroGuardado = await this.apiNumeros.guardarNumero(numero)
 
