@@ -12,6 +12,10 @@ app.use(express.json())
 /*             ZONA DE RUTAS MANEJADAS POR EL ROUTER             */
 /* ------------------------------------------------------------- */
 app.use('/entrada', routerNumeros.start())
+app.use('/numeros', routerNumeros.getNumeros())
+app.use('/numeros', routerNumeros.getPromedio())
+app.use('/numeros', routerNumeros.getCant())
+app.use('/numeros', routerNumeros.getMinMax())
 
 /* ------------------------------------------------------------- */
 /*                      Servidor LISTEN                          */

@@ -1,7 +1,7 @@
 import express from 'express'
+import ControladorNumeros from '../controlador/numeros.js'
 const router = express.Router()
 
-import ControladorNumeros from '../controlador/numeros.js'
 
 class RouterNumeros {
 
@@ -10,9 +10,26 @@ class RouterNumeros {
     }
 
     start() {
-        router.get('/', this.controladorNumeros.obtenerNumeros)
         router.post('/', this.controladorNumeros.guardarNumero)
+        return router
+    }
 
+    getNumeros(){
+        router.get('/', this.controladorNumeros.obtenerNumeros)
+        return router
+    }
+    
+    getPromedio() {
+        router.get('/promedio', this.controladorNumeros.calcularPromedio)
+        return router
+    }
+    getCant() {
+        router.get('/cantidad', this.controladorNumeros.obtenerCantidad)
+        return router
+    }
+    
+    getMinMax() {
+        router.get('/minmax', this.controladorNumeros.obtenerMinMax)
         return router
     }
 }
